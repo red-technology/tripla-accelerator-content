@@ -1,0 +1,43 @@
+{
+  "name": "my-tripla-project",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,ui,head  'yarn dev:ws:api' 'yarn dev:ws:ui' 'yarn dev:ws:head'",
+    "dev:api": "yarn setup:dev && concurrently -n api  'yarn dev:ws:api'",
+    "dev:ui": "yarn setup:dev && concurrently -n api,ui  'yarn dev:ws:api' 'yarn dev:ws:ui''",
+    "dev:head": "yarn setup:dev && concurrently -n api,head  'yarn dev:ws:api' 'yarn dev:ws:head'",
+    "dev:ws:api": "yarn workspace api dev",
+    "dev:ws:ui": "yarn workspace ui dev",
+    "dev:ws:head": "yarn workspace head dev",
+    "build": "concurrently -n api,ui,head 'yarn:build:ws:api' 'yarn:build:ws:ui' 'yarn:build:ws:head'",
+    "build:api": "yarn build:models && yarn build:ws:api",
+    "build:ui": "yarn build:sdk && yarn build:ws:ui",
+    "build:head": "yarn build:sdk && yarn build:ws:head",
+    "build:ws:api": "echo 'Build API' && yarn workspace api build",
+    "build:ws:ui": "echo 'Build UI' && yarn workspace ui build",
+    "build:ws:head": "echo 'Build Head' && yarn workspace head build",
+    "setup:dev": "docker compose --file ./packages/.docker/compose.dev.yml --env-file .env.defaults down --remove-orphans && docker compose --file ./packages/.docker/compose.dev.yml --env-file  .env.defaults up -d --remove-orphans"
+  },
+  "dependencies": {
+    "@red-technology/tripla-api": "^0.2.3",
+    "@red-technology/tripla-models": "^0.2.3",
+    "@red-technology/tripla-sdk": "^0.2.3"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@red-technology/tripla-ui": "^0.2.3",
+    "concurrently": "^8.2.2",
+    "nuxt": "^3.8.0",
+    "vue": "^3.3.7",
+    "vue-router": "^4.2.5"
+  },
+  "packageManager": "yarn@4.0.1",
+  "resolutions": {
+    "lodash": "4.17.21"
+  }
+}

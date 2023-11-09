@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./.output/main.js",
+  "types": "./.output/main.d.ts",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@red-technology/tripla-api": "^0.2.3",
+    "@red-technology/tripla-models": "^0.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  }
+}

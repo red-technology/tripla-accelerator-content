@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "NodeNext",
+    "outDir": ".output",
+    "declarationDir": ".output",
+    "sourceMap": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "skipLibCheck": true, // Prevents duplicate identifier error when running tsc.
+    "baseUrl": "./",
+    "resolveJsonModule": true, // allows us to import json
+    "moduleDetection": "force",
+    "typeRoots": [
+      "./src/@types"
+    ],
+    "types": [],
+    "moduleResolution": "NodeNext"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+  ],
+  "ts-node": {
+    // Tell ts-node CLI to install the --loader automatically
+    "esm": true,
+    "files": true
+  }
+}

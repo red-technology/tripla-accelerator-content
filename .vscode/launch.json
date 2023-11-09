@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "name": "Debug All",
+            "request": "launch",
+            "command": "yarn dev",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "name": "Debug API",
+            "request": "launch",
+            "command": "yarn dev:api",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "name": "Debug Head ONLY",
+            "request": "launch",
+            "command": "yarn dev:head",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "name": "Debug UI ONLY",
+            "request": "launch",
+            "command": "yarn dev:api",
+            "cwd": "${workspaceFolder}"
+        },
+    ]
+}

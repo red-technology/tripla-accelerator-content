@@ -1,0 +1,21 @@
+[data-atom="link"] {
+  @apply mt-4 pt-4 block;
+}
+
+[data-atom-instance="c3d6dda7-849d-45cb-bd58-271d6e778eea"] {
+  @apply mt-2 pt-2 inline-block;
+}
+
+[data-atom-instance="c3d6dda7-849d-45cb-bd58-271d6e778eeb"] {
+  @apply mt-2 pt-2 inline-block;
+}
+
+
+
+[data-atom-instance="c3d6dda7-849d-45cb-bd58-271d6e778eea"] {
+  @apply text-[#333] border-t-[10px] hover:text-[#FFF] hover:border-t-[30px] focus:text-[#FFF] focus:border-t-[30px];
+}
+
+[data-atom-instance="c3d6dda7-849d-45cb-bd58-271d6e778eea"] {
+  @apply md:text-[#444] md:border-t-[1px] md:hover:text-[#F2F2F2] md:hover:border-t-[10px];
+}
