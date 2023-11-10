@@ -24,13 +24,13 @@
     "setup:dev": "docker compose --file ./packages/.docker/compose.dev.yml --env-file .env.defaults down --remove-orphans && docker compose --file ./packages/.docker/compose.dev.yml --env-file  .env.defaults up -d --remove-orphans"
   },
   "dependencies": {
-    "@red-technology/tripla-api": "^0.2.3",
-    "@red-technology/tripla-models": "^0.2.3",
-    "@red-technology/tripla-sdk": "^0.2.3"
+    "@red-technology/tripla-api": "^0.2.5",
+    "@red-technology/tripla-models": "^0.2.5",
+    "@red-technology/tripla-sdk": "^0.2.5"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@red-technology/tripla-ui": "^0.2.3",
+    "@red-technology/tripla-ui": "^0.2.5",
     "concurrently": "^8.2.2",
     "nuxt": "^3.8.0",
     "vue": "^3.3.7",

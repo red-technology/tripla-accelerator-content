@@ -11,8 +11,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@red-technology/tripla-api": "^0.2.3",
-    "@red-technology/tripla-models": "^0.2.3"
+    "@red-technology/tripla-api": "^0.2.5",
+    "@red-technology/tripla-models": "^0.2.5"
   },
   "devDependencies": {
     "nodemon": "^3.0.0",
