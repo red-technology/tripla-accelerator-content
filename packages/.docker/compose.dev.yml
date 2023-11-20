@@ -1,6 +1,6 @@
 version: '2.2'
 
-name: 'customername'
+name: 'tripla-accelerator-content'
 
 services:
   arcadedb:
