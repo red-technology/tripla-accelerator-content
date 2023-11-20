@@ -2548,9 +2548,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@red-technology/tripla-api@npm:^0.2.5":
-  version: 0.2.5
-  resolution: "@red-technology/tripla-api@npm:0.2.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-api%2F0.2.5%2F66bf2c11cc7f80d9e2b5da0ddfa50f2c8d94572d"
+"@red-technology/tripla-api@npm:^0.2.11":
+  version: 0.2.11
+  resolution: "@red-technology/tripla-api@npm:0.2.11::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-api%2F0.2.11%2F007155941f47c835e3bc4e0978c9fa5cac3abfd6"
   dependencies:
     "@elastic/elasticsearch": "npm:^8.10.0"
     "@red-technology/tripla-models": "npm:@red-technology/tripla-models@*"
@@ -2589,13 +2589,13 @@ __metadata:
     semver-sort: "npm:^1.0.0"
     supertest: "npm:^6.3.3"
     uuid: "npm:^8.3.2"
-  checksum: 63e8f697f21937e0e65604c8dd5a230d0f01c599e751449e6a6ab2ac90a860a6d48fbcd4c296d4b929a2796830ede243cbca9967b0c699638c91177d548e61fa
+  checksum: 43884cc0f388deb4b604b73c1cb81fee62e63b8c3ae487eff38468a6219983bf1bfc88d306198201b74fc256b7612de41b3ac4da66167d08037c616f9a013c85
   languageName: node
   linkType: hard
 
-"@red-technology/tripla-head@npm:^0.2.5":
-  version: 0.2.5
-  resolution: "@red-technology/tripla-head@npm:0.2.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-head%2F0.2.5%2Fd7af09408fe7a09d497e6c6d17986ba16946833c"
+"@red-technology/tripla-head@npm:^0.2.11":
+  version: 0.2.11
+  resolution: "@red-technology/tripla-head@npm:0.2.11::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-head%2F0.2.11%2Ff621adc66886f4f07e0f1420414a7ffbf537b308"
   dependencies:
     "@jamescoyle/vue-icon": "npm:^0.1.2"
     "@mdi/font": "npm:latest"
@@ -2618,7 +2618,7 @@ __metadata:
     swiper: "npm:latest"
     tailwind: "npm:^4.0.0"
     vue3-slide-up-down: "npm:^1.2.5"
-  checksum: e2625eace900782d14613b8ed95c54a2923fb7e85fe5ba9dd75f9cac5687af74f3a19973d33494f9477ee775dbb51ad5c3caca764c84b102bb199177063aea78
+  checksum: 0a512f0dd703db9622aa0efe3869b3fb50178160316ef37287a4a707cd48994c55cd9ac2fbd25ebcbc917d402060efddd63247302ef70ac7263e98eece0b2d5f
   languageName: node
   linkType: hard
 
@@ -2632,13 +2632,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@red-technology/tripla-models@npm:^0.2.5":
-  version: 0.2.5
-  resolution: "@red-technology/tripla-models@npm:0.2.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-models%2F0.2.5%2Fc3ff48146aecfe4ae1f223a83351fef51412fcb4"
+"@red-technology/tripla-models@npm:^0.2.11":
+  version: 0.2.11
+  resolution: "@red-technology/tripla-models@npm:0.2.11::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-models%2F0.2.11%2F222b95bcf34159bd1cb25435d0b0e9e85bd68463"
   dependencies:
     jsonata: "npm:^1.8.6"
     lodash-es: "npm:^4.17.21"
-  checksum: 19873b998579b7aa024f466b036b46a7929abc3fa0b0bf4a9ff82d1e3fd08285e97711feadcbe31240c45cdc21445d2cfaa5b611b02ad281ab61873e50be20c5
+  checksum: 8e4a385144e36340ee00ef8f8af4ee5f906cb32ffbbffe96f81a4d3881d5d3709041ba8ac64ecd4401ce18cdf5c76936c5ad806294f456f28879c5264ba0004b
   languageName: node
   linkType: hard
 
@@ -2654,21 +2654,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@red-technology/tripla-sdk@npm:^0.2.5":
-  version: 0.2.5
-  resolution: "@red-technology/tripla-sdk@npm:0.2.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-sdk%2F0.2.5%2Fe8007db5490213965cc0194a3d628272db2094c2"
+"@red-technology/tripla-sdk@npm:^0.2.11":
+  version: 0.2.11
+  resolution: "@red-technology/tripla-sdk@npm:0.2.11::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-sdk%2F0.2.11%2Fb78accd6102bc895f6173787dc477771aaf21cbc"
   dependencies:
     "@red-technology/tripla-models": "npm:@red-technology/tripla-models@*"
     detect-it: "npm:^4.0.1"
     ofetch: "npm:^1.3.3"
     tripla-models: "npm:@red-technology/tripla-models@*"
-  checksum: e4ea69f1e01c81de4727f755c78b2c8ad3df6ed2addcb592ae85cd8b5017e33119777c7fa87c14260beef462b43a55a71b9b6bd77a4580305ba11424e9b686ea
+  checksum: 7eba8167001187aef53fbe846d77a5eb08de197d1ceeb8a37e2994e03da2448c83fefe1f7748bfe201fdc3c9f44427d77509ceed64f82987dfd5a4e30276fc60
   languageName: node
   linkType: hard
 
-"@red-technology/tripla-ui@npm:^0.2.5":
-  version: 0.2.5
-  resolution: "@red-technology/tripla-ui@npm:0.2.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-ui%2F0.2.5%2F0757a1a56a63a7e115b66116af0cd0f2a81d621a"
+"@red-technology/tripla-ui@npm:^0.2.11":
+  version: 0.2.11
+  resolution: "@red-technology/tripla-ui@npm:0.2.11::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40red-technology%2Ftripla-ui%2F0.2.11%2F58132825b4295be181f11896940c60d2b91ee988"
   dependencies:
     "@chenfengyuan/vue-qrcode": "npm:^2.0.0"
     "@editorjs/editorjs": "npm:^2.28.2"
@@ -2709,7 +2709,7 @@ __metadata:
     vue3-snackbar: "npm:^1.1.2"
     vuedraggable: "npm:next"
     vuetify: "npm:latest"
-  checksum: 1883d1b21947f34530a0a98317f601f21151299c0b221cb2049a5924d8ece55cbec16d1414457a2ffefeee80279d7a6f92b136ddbfaa51d8d91dba9c932b2806
+  checksum: 30d7fe0435e7c18dced6d718df39fc3da6633aa04beb1a2db5f29f664838be6b7d2f6a3afef09ec09821dc0de4efebdd97faac080d1cfd135ad53b424e53e21d
   languageName: node
   linkType: hard
 
@@ -4186,8 +4186,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:packages/api"
   dependencies:
-    "@red-technology/tripla-api": "npm:^0.2.5"
-    "@red-technology/tripla-models": "npm:^0.2.5"
+    "@red-technology/tripla-api": "npm:^0.2.11"
+    "@red-technology/tripla-models": "npm:^0.2.11"
     nodemon: "npm:^3.0.0"
     ts-node: "npm:^10.9.1"
     typescript: "npm:^5.0.0"
@@ -8320,9 +8320,9 @@ __metadata:
     "@nuxtjs/google-fonts": "npm:latest"
     "@nuxtjs/i18n": "npm:next"
     "@nuxtjs/tailwindcss": "npm:^6.4.0"
-    "@red-technology/tripla-head": "npm:^0.2.5"
-    "@red-technology/tripla-models": "npm:^0.2.5"
-    "@red-technology/tripla-sdk": "npm:^0.2.5"
+    "@red-technology/tripla-head": "npm:^0.2.11"
+    "@red-technology/tripla-models": "npm:^0.2.11"
+    "@red-technology/tripla-sdk": "npm:^0.2.11"
     "@vueform/slider": "npm:^2.1.9"
     "@vuepic/vue-datepicker": "npm:latest"
     "@vueuse/core": "npm:^10.5.0"
@@ -10823,10 +10823,10 @@ __metadata:
   resolution: "my-tripla-project@workspace:."
   dependencies:
     "@nuxt/devtools": "npm:latest"
-    "@red-technology/tripla-api": "npm:^0.2.5"
-    "@red-technology/tripla-models": "npm:^0.2.5"
-    "@red-technology/tripla-sdk": "npm:^0.2.5"
-    "@red-technology/tripla-ui": "npm:^0.2.5"
+    "@red-technology/tripla-api": "npm:^0.2.11"
+    "@red-technology/tripla-models": "npm:^0.2.11"
+    "@red-technology/tripla-sdk": "npm:^0.2.11"
+    "@red-technology/tripla-ui": "npm:^0.2.11"
     concurrently: "npm:^8.2.2"
     nuxt: "npm:^3.8.0"
     vue: "npm:^3.3.7"
@@ -15202,9 +15202,9 @@ __metadata:
     "@nuxt/vite-builder": "npm:latest"
     "@nuxtjs/i18n": "npm:next"
     "@pinia/nuxt": "npm:latest"
-    "@red-technology/tripla-models": "npm:^0.2.5"
-    "@red-technology/tripla-sdk": "npm:^0.2.5"
-    "@red-technology/tripla-ui": "npm:^0.2.5"
+    "@red-technology/tripla-models": "npm:^0.2.11"
+    "@red-technology/tripla-sdk": "npm:^0.2.11"
+    "@red-technology/tripla-ui": "npm:^0.2.11"
     "@types/codemirror": "npm:^5.60.8"
     "@uppy/core": "npm:^3.0.6"
     "@uppy/dashboard": "npm:^3.2.2"
