@@ -15,6 +15,7 @@
     "@red-technology/tripla-models": "^0.2.11"
   },
   "devDependencies": {
+    "@types/node": "^20.9.0",
     "nodemon": "^3.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.0"

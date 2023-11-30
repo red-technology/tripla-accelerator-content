@@ -3183,6 +3183,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^20.9.0":
+  version: 20.9.2
+  resolution: "@types/node@npm:20.9.2"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 891a035a5b7796001f5daaec03b2d84ebb67d731b67abb34c352af1b5b1f53beb4a92f0f6a66f6e0ed97191c3022cc8c830e048f8a5c53806e8ab248873a7c7b
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.2
   resolution: "@types/parse-json@npm:4.0.2"
@@ -3592,16 +3601,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:^2.3.4":
-  version: 2.3.4
-  resolution: "@vitejs/plugin-vue@npm:2.3.4"
-  peerDependencies:
-    vite: ^2.5.10
-    vue: ^3.2.25
-  checksum: a27428a592df0de2c18709c30369db9e499f7c74f2bc8e76d7b99671c2d35118f2729fa9503f22aed37a2d37403b7932f5dd78e37cbfc5432bc4588185b54eca
-  languageName: node
-  linkType: hard
-
 "@vitejs/plugin-vue@npm:^4.4.0":
   version: 4.4.1
   resolution: "@vitejs/plugin-vue@npm:4.4.1"
@@ -3609,6 +3608,16 @@ __metadata:
     vite: ^4.0.0
     vue: ^3.2.25
   checksum: c8dd2b3b6c7067b6831274c480f446b904a6c756c1542443e53a5656e848cd0e98590495ad0906e761de9d14f0d8b48c47486f5b6fecbda6645d2f96bf5684b2
+  languageName: node
+  linkType: hard
+
+"@vitejs/plugin-vue@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "@vitejs/plugin-vue@npm:4.5.0"
+  peerDependencies:
+    vite: ^4.0.0 || ^5.0.0
+    vue: ^3.2.25
+  checksum: d15b9c817cc6ae361a5b0975254d842a8f81bc7296112fe6ace7296e80a2bfb03ad749c7db356a0f6d5fc5af1c8d755dfe7d11fd5b7499512c44fea174334f45
   languageName: node
   linkType: hard
 
@@ -4188,6 +4197,7 @@ __metadata:
   dependencies:
     "@red-technology/tripla-api": "npm:^0.2.11"
     "@red-technology/tripla-models": "npm:^0.2.11"
+    "@types/node": "npm:^20.9.0"
     nodemon: "npm:^3.0.0"
     ts-node: "npm:^10.9.1"
     typescript: "npm:^5.0.0"
@@ -8343,7 +8353,7 @@ __metadata:
     scroll-polyfill: "npm:^1.0.1"
     swiper: "npm:latest"
     tailwind: "npm:^4.0.0"
-    vite: "npm:^4.0.0"
+    vite: "npm:^4.5.0"
     vue: "npm:^3.0.0"
     vue-router: "npm:^4.0.0"
     vue3-slide-up-down: "npm:^1.2.5"
@@ -10829,6 +10839,7 @@ __metadata:
     "@red-technology/tripla-ui": "npm:^0.2.11"
     concurrently: "npm:^8.2.2"
     nuxt: "npm:^3.8.0"
+    vite: "npm:^4.5.0"
     vue: "npm:^3.3.7"
     vue-router: "npm:^4.2.5"
   languageName: unknown
@@ -15213,7 +15224,7 @@ __metadata:
     "@uppy/progress-bar": "npm:^3.0.1"
     "@uppy/vue": "npm:^1.0.1"
     "@uppy/xhr-upload": "npm:^3.1.0"
-    "@vitejs/plugin-vue": "npm:^2.3.4"
+    "@vitejs/plugin-vue": "npm:^4.5.0"
     "@vue-js-cron/vuetify": "npm:next"
     "@vue/test-utils": "npm:^2.2.10"
     "@vuepic/vue-datepicker": "npm:^3.6.8"
@@ -15231,6 +15242,7 @@ __metadata:
     qrcode: "npm:^1.5.1"
     sass: "npm:^1.58.1"
     vanilla-jsoneditor: "npm:^0.6.6"
+    vite: "npm:^4.5.0"
     vue: "npm:*"
     vue-router: "npm:*"
     vue-uuid: "npm:^3.0.0"
@@ -15908,7 +15920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^3.0.0 || ^4.0.0, vite@npm:^4.0.0, vite@npm:^4.5.0":
+"vite@npm:^3.0.0 || ^4.0.0, vite@npm:^4.5.0":
   version: 4.5.0
   resolution: "vite@npm:4.5.0"
   dependencies:

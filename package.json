@@ -33,6 +33,7 @@
     "@red-technology/tripla-ui": "^0.2.11",
     "concurrently": "^8.2.2",
     "nuxt": "^3.8.0",
+    "vite": "^4.5.0",
     "vue": "^3.3.7",
     "vue-router": "^4.2.5"
   },
