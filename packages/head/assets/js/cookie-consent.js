@@ -1,7 +1,7 @@
 /*
  * Cookie Consent
  *
- * Owned By - Red Technology Solution Ltd
+ * Owned By - Tripla
  * Author - Alan Strickland
  *
  * This script must be independent of jQuery as it will be loaded prior to jQuery.
@@ -299,7 +299,7 @@
       if (configElement) newConfig = { ...newConfig, ...JSON.parse(configElement.dataset.consentConfig) };
 
       //If google consent mode is enabled then update the category of any scripts
-      if (newConfig.enable_google_consent_mode) {
+      if (newConfig.enable_google_consent_mode && newConfig.script_definitions && newConfig.script_definitions.length > 0) {
         for (let definition of newConfig.script_definitions) {
           if (definition.googleConsentModeCategory) {
             definition.oldCategory = definition.category;
