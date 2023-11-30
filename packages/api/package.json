@@ -11,8 +11,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@red-technology/tripla-api": "^0.2.11",
-    "@red-technology/tripla-models": "^0.2.11"
+    "@red-technology/tripla-api": "^0.2.28",
+    "@red-technology/tripla-models": "^0.2.28"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
