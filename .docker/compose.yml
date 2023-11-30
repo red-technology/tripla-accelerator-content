@@ -1,0 +1,105 @@
+version: '3'
+
+networks:
+  private: { name: 'private' }
+  data: { name: 'data', external: true }
+  reverseproxy: { name: 'reverseproxy', external: true }
+
+services:
+  api:
+    env_file: .env.live
+    container_name: '${TRIPLA_API_SCOPE}_api'
+    image: 'ghcr.io/red-technology/tripla-${TRIPLA_API_SCOPE}'
+    volumes:
+      - ./volumes/tripla-${TRIPLA_API_SCOPE}/logs:/app/logs
+      - ./volumes/tripla-${TRIPLA_API_SCOPE}/storage:/app/storage
+    expose: ['${TRIPLA_API_SERVER_PORT}']
+    networks: ['data', 'private']
+    entrypoint: ['dumb-init', 'node', './packages/api/.output/main.js']
+    labels:
+      - 'com.centurylinklabs.watchtower.enable=true' #automatic update when image updates
+    healthcheck:
+      test: ['CMD-SHELL', "curl -s https://localhost:${TRIPLA_API_SERVER_PORT}/_status --insecure | grep -q 'OK'"]
+      interval: 10s
+      timeout: 10s
+      retries: 120
+
+  ui:
+    env_file: .env.live
+    container_name: '${TRIPLA_API_SCOPE}_ui'
+    depends_on:
+      api:
+        condition: service_healthy
+    image: 'ghcr.io/red-technology/tripla-${TRIPLA_API_SCOPE}'
+    volumes:
+      - ./volumes/tripla-${TRIPLA_API_SCOPE}/logs:/app/logs
+      - ./volumes/tripla-${TRIPLA_API_SCOPE}/storage:/app/storage
+    expose: ['${TRIPLA_UI_SERVER_PORT}']
+    networks: ['reverseproxy', 'private']
+    entrypoint: ['dumb-init', 'node', './packages/ui/.output/server/index.mjs']
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.${TRIPLA_API_SCOPE}_ui.rule=Host(`admin-${TRIPLA_API_SCOPE}.tripla.eyn-lab.redtech.net.uk`)'
+      - 'traefik.http.routers.${TRIPLA_API_SCOPE}_ui.entrypoints=websecure'
+      - 'traefik.http.routers.${TRIPLA_API_SCOPE}_ui.tls.certresolver=myresolver'
+      - 'traefik.http.services.${TRIPLA_API_SCOPE}_ui.loadbalancer.server.port=${TRIPLA_UI_SERVER_PORT}'
+      - 'traefik.docker.network=reverseproxy'
+
+      # Traefik middleware for gzip compression.
+      - 'traefik.http.middlewares.${TRIPLA_API_SCOPE}_ui_compress.compress=true'
+      - 'traefik.http.routers.${TRIPLA_API_SCOPE}_ui.middlewares=${TRIPLA_API_SCOPE}_ui_compress'
+      - 'com.centurylinklabs.watchtower.enable=true' #automatic update when image updates
+    environment:
+      - NUXT_API_PRIVATE_KEY=${TRIPLA_API_PRIVATE_KEY}
+      - NUXT_API_HOST=${TRIPLA_API_SCOPE}_api
+      - NUXT_API_PORT=${TRIPLA_API_SERVER_PORT}
+      - PORT=${TRIPLA_UI_SERVER_PORT}
+
+  head:
+    env_file: .env.live
+    container_name: '${TRIPLA_API_SCOPE}_head'
+    depends_on:
+      api:
+        condition: service_healthy
+    image: 'ghcr.io/red-technology/tripla-${TRIPLA_API_SCOPE}'
+    volumes:
+      - ./volumes/tripla-${TRIPLA_API_SCOPE}/logs:/app/logs
+      - ./volumes/tripla-${TRIPLA_API_SCOPE}/storage:/app/storage
+    expose: ['${TRIPLA_HEAD_SERVER_PORT}']
+    networks: ['reverseproxy', 'private']
+    entrypoint: ['dumb-init', 'node', './packages/head/.output/server/index.mjs', '']
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.${TRIPLA_API_SCOPE}_head.rule=Host(`${TRIPLA_API_SCOPE}.tripla.eyn-lab.redtech.net.uk`)'
+      - 'traefik.http.routers.${TRIPLA_API_SCOPE}_head.entrypoints=websecure'
+      - 'traefik.http.routers.${TRIPLA_API_SCOPE}_head.tls.certresolver=myresolver'
+      - 'traefik.http.services.${TRIPLA_API_SCOPE}_head.loadbalancer.server.port=${TRIPLA_HEAD_SERVER_PORT}'
+      - 'traefik.http.middlewares.${TRIPLA_API_SCOPE}_head_compress.compress=true'
+      - 'traefik.http.routers.${TRIPLA_API_SCOPE}_head.middlewares=${TRIPLA_API_SCOPE}_head_compress'
+      - 'traefik.docker.network=reverseproxy'
+      - 'com.centurylinklabs.watchtower.enable=true' #automatic update when image updates
+    environment:
+      - NUXT_API_PRIVATE_KEY=${TRIPLA_API_PRIVATE_KEY}
+      - NUXT_API_HOST=${TRIPLA_API_SCOPE}_api
+      - NUXT_API_PORT=${TRIPLA_API_SERVER_PORT}
+      - PORT=${TRIPLA_HEAD_SERVER_PORT}
+
+  restarter:
+    image: docker:cli
+    restart: unless-stopped
+    volumes: ['/var/run/docker.sock:/var/run/docker.sock']
+    entrypoint: ['/bin/sh', '-c']
+    command:
+      - |
+        while true; do
+          if [ "$$(date +'%H:%M')" = '09:00' ]; then
+            docker restart ${TRIPLA_API_SCOPE}_api
+          fi
+          sleep 60
+        done
+    deploy:
+      resources:
+        limits:
+          memory: 10M
+        reservations:
+          memory: 10M

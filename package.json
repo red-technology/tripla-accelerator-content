@@ -21,7 +21,12 @@
     "build:ws:api": "echo 'Build API' && yarn workspace api build",
     "build:ws:ui": "echo 'Build UI' && yarn workspace ui build",
     "build:ws:head": "echo 'Build Head' && yarn workspace head build",
-    "setup:dev": "docker compose --file ./packages/.docker/compose.dev.yml --env-file .env.defaults down --remove-orphans && docker compose --file ./packages/.docker/compose.dev.yml --env-file  .env.defaults up -d --remove-orphans"
+    "docker": "yarn docker:build && yarn docker:dev",
+    "docker:build": "docker build -f ./.docker/dockerfile .",
+    "docker:live": "docker compose --file ./packages/.docker/compose.yml --env-file .env.live up -d --remove-orphans",
+    "docker:live:down": "docker compose --file ./packages/.docker/compose.yml --env-file .env.live down --remove-orphans",
+    "docker:dev": "docker compose --file ./packages/.docker/compose.yml --env-file .env.live up -d --remove-orphans",
+    "docker:dev:down": "docker compose --file ./packages/.docker/compose.yml --env-file .env.live down --remove-orphans"
   },
   "dependencies": {
     "@red-technology/tripla-api": "^0.2.11",

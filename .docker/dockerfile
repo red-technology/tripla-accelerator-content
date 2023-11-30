@@ -28,21 +28,13 @@ RUN install -d -m 0777 /logs
 RUN chown node:node /storage
 RUN chown node:node /logs
 
-COPY --chown=node:node package.json .
-
-COPY --chown=node:node yarn.lock .
-
-COPY --chown=node:node .yarnrc.yml .
-
-COPY --chown=node:node .yarn/ .yarn/
-
-COPY --chown=node:node ./packages/ packages/
+COPY --chown=node:node ./ .
 
 # I feel like this should be yarn and be immutable to prevent upgrading of dependencies but that is raising an error
 # RUN yarn --immutable
-RUN yarn install
+RUN yarn install && yarn build
 
-RUN yarn build
+RUN cp node_modules/tailwindcss/lib/css demo/head/.output/server/node_modules/tailwindcss/lib/css -r
 
 # USER node
 
