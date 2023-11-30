@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@red-technology/tripla-head": "^0.2.28",
     "@red-technology/tripla-ui": "^0.2.28",
     "concurrently": "^8.2.2",
     "nuxt": "^3.8.0",

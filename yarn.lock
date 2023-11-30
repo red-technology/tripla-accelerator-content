@@ -10833,6 +10833,7 @@ __metadata:
   dependencies:
     "@nuxt/devtools": "npm:latest"
     "@red-technology/tripla-api": "npm:^0.2.28"
+    "@red-technology/tripla-head": "npm:^0.2.28"
     "@red-technology/tripla-models": "npm:^0.2.28"
     "@red-technology/tripla-sdk": "npm:^0.2.28"
     "@red-technology/tripla-ui": "npm:^0.2.28"
