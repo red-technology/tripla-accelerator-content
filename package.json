@@ -27,6 +27,13 @@
     "docker:live:down": "docker compose --file ./packages/.docker/compose.yml --env-file .env.live down --remove-orphans",
     "docker:dev": "docker compose --file ./packages/.docker/compose.yml --env-file .env.live up -d --remove-orphans",
     "docker:dev:down": "docker compose --file ./packages/.docker/compose.yml --env-file .env.live down --remove-orphans"
+    "docker:dev:down": "docker compose --file ./packages/.docker/compose.yml --env-file .env.live down --remove-orphans",
+    "release": "yarn version $0 && yarn release:post $0",
+    "release:patch": "yarn release patch",
+    "release:minor": "yarn release minor && yarn release:branch",
+    "release:major": "yarn release major && yarn release:branch",
+    "release:post": "yarn workspaces foreach -Rt --from 'packages/*' version $npm_package_version && git stage --all && git commit -m '(release)('$0') '$npm_package_version && git tag 'v'$npm_package_version",
+    "release:branch": "git checkout --no-track -b release/$npm_package_version refs/tags/v$npm_package_version"
   },
   "dependencies": {
     "@red-technology/tripla-api": "^0.2.11",
