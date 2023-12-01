@@ -35,22 +35,23 @@
     "release:branch": "git checkout --no-track -b release/$npm_package_version refs/tags/v$npm_package_version"
   },
   "dependencies": {
-    "@red-technology/tripla-api": "^0.2.28",
-    "@red-technology/tripla-models": "^0.2.28",
-    "@red-technology/tripla-sdk": "^0.2.28"
+    "@red-technology/tripla-api": "^0.2.31",
+    "@red-technology/tripla-models": "^0.2.31",
+    "@red-technology/tripla-sdk": "^0.2.31"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@red-technology/tripla-head": "^0.2.28",
-    "@red-technology/tripla-ui": "^0.2.28",
+    "@red-technology/tripla-head": "^0.2.31",
+    "@red-technology/tripla-ui": "^0.2.31",
     "concurrently": "^8.2.2",
-    "nuxt": "^3.8.0",
+    "nuxt": "^3.8.1",
     "vite": "^4.5.0",
     "vue": "^3.3.7",
     "vue-router": "^4.2.5"
   },
   "packageManager": "yarn@4.0.2",
   "resolutions": {
-    "lodash": "4.17.21"
+    "lodash": "4.17.21",
+    "nuxt": "^3.8.1"
   }
 }
